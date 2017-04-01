@@ -5,4 +5,5 @@ def f(x):
 
 if __name__ == '__main__':
     p = Pool(processes=4) 
-    print p.map(f, [1, 2, 3, 4]) 
+    res = p.map(f, [1, 2, 3, 4]) 
+    print res

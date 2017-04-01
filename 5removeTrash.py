@@ -30,10 +30,10 @@ def checkfile(fname):
     if eflag or tflag:
         os.system("rm "+fname)
 
-os.system('find . -size 0 -delete')
+
 for i in range(8):
 
-    path = "new_"+ str(i)+'/'
+    path = "../new_"+ str(i)+'/'
     if os.path.isdir(path):
         ls = os.listdir(path)
         for fname in ls:

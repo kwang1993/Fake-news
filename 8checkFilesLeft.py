@@ -28,7 +28,7 @@ for i in range(len(ll)):
     filename = str(int(idx[i])) + '.html'
     pathfile = folder + '/' + filename
     #print pathfile
-    if os.path.isfile(pathfile):
+    if os.path.isfile('../'+pathfile):
         pathfiles.append(pathfile)
     else:
         print pathfile + ' removed!'
