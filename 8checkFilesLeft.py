@@ -12,15 +12,13 @@ import os.path
 # print len(left) + len(removed) == len(dfs)
 # print left
 #==============================================================================
-if os.path.isfile('index.csv'):
-    ll = pd.read_csv('index.csv')
-else:
-    ll = pd.read_csv('filesLeft.csv')
-    ll = ll.drop(['Unnamed: 0'], axis = 1)
+ll = pd.read_csv('csv/filesLeft.csv')
+ll = ll.drop(['Unnamed: 0'], axis = 1)
 new = list(ll.new) 
 idx = list(ll.idx)
 pathfiles = []
 indices = []
+prefix = '../'
 for i in range(len(ll)):
     if i % 10000 == 0:
         print i
@@ -28,7 +26,7 @@ for i in range(len(ll)):
     filename = str(int(idx[i])) + '.html'
     pathfile = folder + '/' + filename
     #print pathfile
-    if os.path.isfile('../'+pathfile):
+    if os.path.isfile(prefix+pathfile):
         pathfiles.append(pathfile)
     else:
         print pathfile + ' removed!'
