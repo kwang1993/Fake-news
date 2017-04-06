@@ -44,6 +44,14 @@ def f(html):
         line = f.readline()
     f.close()
     extractor = Extractor(extractor='ArticleExtractor', html=data)
+##    - DefaultExtractor
+##    - ArticleExtractor
+##    - ArticleSentencesExtractor
+##    - KeepEverythingExtractor
+##    - KeepEverythingWithMinKWordsExtractor
+##    - LargestContentExtractor
+##    - NumWordsRulesExtractor
+##    - CanolaExtractor
     content = extractor.getText()
     fout = open(txt, 'w')
     fout.writelines(content.encode('utf-8'))

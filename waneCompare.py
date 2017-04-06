@@ -2,8 +2,8 @@ import pandas as pd
 import ast
 import json
 import os
-#filename = 'filesLeftWithoutEmptyFiles.csv'
-filename = 'indexFirstRound.csv'
+
+filename = 'csv/filesLeft.csv'
 print filename
 df = pd.read_csv(filename)
 urls = list(df.url)
@@ -13,7 +13,7 @@ print '\n'
 
 dataframe = pd.DataFrame(columns =  ["wanefile", 'url', 'timestamp', 'named_entities', 'digest'])
 url = []
-folder = 'wane/'
+folder = '../wane/'
 fnames = os.listdir(folder)
 for fname in fnames:
     print fname

@@ -18,7 +18,8 @@ new = list(ll.new)
 idx = list(ll.idx)
 pathfiles = []
 indices = []
-prefix = '../'
+
+prefix = '../'
 for i in range(len(ll)):
     if i % 10000 == 0:
         print i
@@ -34,3 +35,11 @@ for i in range(len(ll)):
 ll = ll.drop(ll.index[indices])
 ll['pathfile'] = pathfiles
 ll.to_csv('index.csv', index = False)
+#ll = pd.read_csv('index.csv')
+n = len(ll)
+c = 0
+for i in range(8):
+    folder = prefix +'new_' + str(i) + '/'
+    fnames = os.listdir(folder)
+    c += len(fnames)
+print c == n
