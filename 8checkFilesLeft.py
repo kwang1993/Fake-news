@@ -34,6 +34,7 @@ for i in range(len(ll)):
         indices.append(i)
 ll = ll.drop(ll.index[indices])
 ll['pathfile'] = pathfiles
+ll = ll.drop(['new', 'idx'], axis = 1)
 ll.to_csv('index.csv', index = False)
 #ll = pd.read_csv('index.csv')
 n = len(ll)
